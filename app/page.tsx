@@ -38,6 +38,7 @@ export default async function Home() {
                   src={session.user.image as string}
                   alt={session.user.name as string}
                 />
+                <p>{session.user.role}</p>
                 <SignOut />
                 <Form />
               </>

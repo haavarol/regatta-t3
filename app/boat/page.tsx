@@ -16,7 +16,7 @@ export default async function Boat() {
       {boats?.map((boat) => (
         <div key={boat.id}>
           <h2>{boat.name}</h2>
-          <p>{boat.description}</p>
+          <p>{boat.lys}</p>
         </div>
       ))}
     </div>
