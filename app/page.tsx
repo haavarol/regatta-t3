@@ -2,7 +2,7 @@ import { authOptions } from '@/server/auth'
 import { prisma } from '@/server/db'
 import { getServerSession } from 'next-auth/next'
 import Image from 'next/image'
-import { DeletePost, SignIn, SignOut } from './Actions'
+import { DeletePost, SignIn, SignInGoogle, SignOut } from './Actions'
 import Form from './Form'
 
 async function getPosts() {
@@ -43,7 +43,10 @@ export default async function Home() {
                 <Form />
               </>
             ) : (
-              <SignIn />
+              <>
+                <SignIn />
+                <SignInGoogle />
+              </>
             )}
           </div>
           <div className="flex max-w-md flex-col items-center justify-center gap-5">
