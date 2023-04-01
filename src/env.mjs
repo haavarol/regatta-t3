@@ -25,6 +25,8 @@ const server = z.object({
   GITHUB_SECRET: z.string(),
   GOOGLE_ID: z.string(),
   GOOGLE_SECRET: z.string(),
+  FACEBOOK_CLIENT_ID: z.string().optional(),
+  FACEBOOK_CLIENT_SECRET: z.string().optional(),
 });
 
 /**
@@ -53,6 +55,8 @@ const processEnv = {
   GITHUB_SECRET: process.env.GITHUB_SECRET,
   GOOGLE_ID: process.env.GOOGLE_ID,
   GOOGLE_SECRET: process.env.GOOGLE_SECRET,
+  FACEBOOK_CLIENT_ID: process.env.FACEBOOK_CLIENT_ID,
+  FACEBOOK_CLIENT_SECRET: process.env.FACEBOOK_CLIENT_SECRET,
 };
 
 // Don't touch the part below

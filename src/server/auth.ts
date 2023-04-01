@@ -9,6 +9,7 @@ import {
 } from 'next-auth'
 import GithubProvider from 'next-auth/providers/github'
 import GoogleProvider from 'next-auth/providers/google'
+import FacebookProvider from 'next-auth/providers/facebook'
 
 type UserRole = 'USER' | 'ADMIN'
 
@@ -60,6 +61,10 @@ export const authOptions: NextAuthOptions = {
       clientId: env.GOOGLE_ID,
       clientSecret: env.GOOGLE_SECRET,
     }),
+    FacebookProvider({
+      clientId: env.FACEBOOK_CLIENT_ID || '',
+      clientSecret: env.FACEBOOK_CLIENT_SECRET || '',
+    })
     /**
      * ...add more providers here.
      *

@@ -12,7 +12,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
+        <div className="container flex flex-col items-center justify-center gap-10 px-4 py-16 ">
+          <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
+            <span className="text-4xl">Florø</span>{' '}
+            <span className="text-[hsl(280,100%,70%)]">Seilforening</span>
+          </h1>
+          <div className="flex flex-col items-center justify-center gap-1">
+        {children}
+            </div>
+            </div>
+      </main>
+        </body>
     </html>
   );
 }

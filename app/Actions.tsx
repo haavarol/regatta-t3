@@ -39,6 +39,16 @@ export function SignInGoogle() {
     </button>
   )
 }
+export function SignInFacebook() {
+  return (
+    <button
+      className="mb-4 flex rounded-md border border-gray-800 bg-black px-4 py-3 text-sm font-semibold text-neutral-200 transition-all hover:text-white"
+      onClick={() => signIn('facebook')}
+    >
+      <div className="ml-3">Sign in with Facebook</div>
+    </button>
+  )
+}
 
 export function DeletePost({ id }: { id: string }) {
   const router = useRouter()

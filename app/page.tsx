@@ -2,7 +2,7 @@ import { authOptions } from '@/server/auth'
 import { prisma } from '@/server/db'
 import { getServerSession } from 'next-auth/next'
 import Image from 'next/image'
-import { DeletePost, SignIn, SignInGoogle, SignOut } from './Actions'
+import { DeletePost, SignIn, SignInFacebook, SignInGoogle, SignOut } from './Actions'
 import Form from './Form'
 
 async function getPosts() {
@@ -22,12 +22,6 @@ export default async function Home() {
   const session = await getServerSession(authOptions)
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-        <div className="container flex flex-col items-center justify-center gap-10 px-4 py-16 ">
-          <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-            <span className="text-4xl">Florø</span>{' '}
-            <span className="text-[hsl(280,100%,70%)]">Seilforening</span>
-          </h1>
           <div className="flex flex-col items-center justify-center gap-1">
             {session?.user ? (
               <>
@@ -46,6 +40,7 @@ export default async function Home() {
               <>
                 <SignIn />
                 <SignInGoogle />
+                <SignInFacebook />
               </>
             )}
           </div>
@@ -63,8 +58,6 @@ export default async function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </main>
     </>
   )
 }
